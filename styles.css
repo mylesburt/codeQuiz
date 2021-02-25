@@ -32,6 +32,7 @@ body {
 }
 
 .infoBox {
+  display: none;
   width: 540px;
   background: white;
   border-radius: 5px;
@@ -60,4 +61,43 @@ body {
 .infoBox .infoList .info span {
   font-weight: 600;
   color: green;
+}
+
+.infoBox .buttons {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 35px;
+  border-top: 1px solid lightgrey;
+}
+
+.infoBox .buttons button {
+  margin: 0 5px;
+  height: 40px;
+  width: 100px;
+  border: 1px solid green;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.buttons button.restart {
+  color: white;
+  background: green;
+}
+
+.buttons button.restart:hover {
+  background: darkgreen;
+}
+
+.buttons button.quit {
+  color: green;
+}
+
+.buttons button.quit:hover {
+  color: white;
+  background: darkgreen;
 }
