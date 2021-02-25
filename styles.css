@@ -238,6 +238,18 @@ section .optionList .option:hover {
   background: white;
 }
 
+.optionList .option.correct {
+  color: white;
+  background: blue;
+  border-color: lightgray;
+}
+
+.optionList .option.incorrect {
+  color: white;
+  background: red;
+  border-color: lightgray;
+}
+
 .quizBox footer {
   height: 60px;
   width: 100%;
