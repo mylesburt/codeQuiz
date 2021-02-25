@@ -5,6 +5,8 @@ const exitBtn = infoBox.querySelector(".buttons .quit");
 const continueBtn = infoBox.querySelector(".buttons .restart");
 const quizBox = document.querySelector(".quizBox");
 const optionList = document.querySelector(".optionList");
+const timeCount = quizBox.querySelector(".timer .timeSec");
+const timeLine = quizBox.querySelector("header .timeLine");
 
 //If Start Quiz button is clicked...
 startButton.onclick = () => {
@@ -22,10 +24,15 @@ continueBtn.onclick = () => {
   quizBox.classList.add("activeQuiz"); //Show quiz box
   showQuestions(0);
   queCounter(1);
+  startTimer(15);
+  startTimerLine(0);
 };
 
 let queCount = 0;
 let queNumb = 1;
+let counter;
+let timeValue = 15;
+let widthValue = 0;
 
 const nextBtn = quizBox.querySelector(".nextBtn");
 
@@ -36,6 +43,10 @@ nextBtn.onclick = () => {
     queNumb++;
     showQuestions(queCount);
     queCounter(queNumb);
+    clearInterval(counter);
+    startTimer(timeValue);
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
   } else {
     console.log("Questions completed.");
   }
@@ -75,6 +86,8 @@ let tickIcon = `<div class="icon tick"><i class="fas fa-check"></i></div>`;
 let crossIcon = `<div class="icon cross"><i class="fas fa-times"></i></div>`;
 
 function optionSelected(answer) {
+  clearInterval(counter);
+  clearInterval(counterLine);
   let userAns = answer.textContent;
   let correctAns = questions[queCount].answer;
   let allOptions = optionList.children.length;
@@ -97,6 +110,34 @@ function optionSelected(answer) {
   //once user selected, disbale all options
   for (let i = 0; i < allOptions; i++) {
     optionList.children[i].classList.add("disabled");
+  }
+  nextBtn.style.display = "block";
+}
+
+function startTimer(time) {
+  counter = setInterval(timer, 1000);
+  function timer() {
+    timeCount.textContent = time;
+    time--;
+    if (time < 9) {
+      let addZero = timeCount.textContent;
+      timeCount.textContent = "0" + addZero;
+    }
+    if (time < 0) {
+      clearInterval(counter);
+      timeCount.textContent = "00";
+    }
+  }
+}
+
+function startTimerLine(time) {
+  counterLine = setInterval(timer, 29);
+  function timer() {
+    time += 1;
+    timeLine.style.width = time + "px";
+    if (time > 549) {
+      clearInterval(counterLine);
+    }
   }
 }
 
