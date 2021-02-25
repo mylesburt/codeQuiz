@@ -250,6 +250,10 @@ section .optionList .option:hover {
   border-color: lightgray;
 }
 
+.optionList .option.disabled {
+  pointer-events: none;
+}
+
 .quizBox footer {
   height: 60px;
   width: 100%;
