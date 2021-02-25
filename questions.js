@@ -47,7 +47,7 @@ let questions = [
   {
     numb: 5,
     question: "What does XML stand for?",
-    answer: "Structured Query Language",
+    answer: "eXtensible Markup Language",
     options: [
       "eXtensible Markup Language",
       "eXtensible Multiple Language",
