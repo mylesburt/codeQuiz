@@ -13,11 +13,14 @@ body {
 
 .startButton,
 .infoBox,
-.quizBox {
+.quizBox,
+.resultBox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0px 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .startButton button {
@@ -33,10 +36,12 @@ body {
 }
 
 .infoBox {
-  display: none;
   width: 540px;
   background: white;
   border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .infoBox .infoTitle {
@@ -45,7 +50,7 @@ body {
   border-bottom: 1px solid lightgrey;
   display: flex;
   align-items: center;
-  padding: 0 35px;
+  padding: 0 30px;
   font-size: 20px;
   font-weight: 600;
 }
@@ -104,10 +109,12 @@ body {
 }
 
 .quizBox {
-  display: none;
   width: 550px;
   background-color: white;
   border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .quizBox header {
@@ -261,4 +268,61 @@ footer .nextBtn {
 
 footer .nextBtn:hover {
   background: darkgreen;
+}
+
+.resultBox {
+  background: white;
+  width: 450px;
+  padding: 25px 30px;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.resultBox .icon {
+  font-size: 100px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.resultBox .completeText {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.resultBox .scoreText span {
+  display: flex;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.scoreText span p {
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+.resultBox .buttons {
+  display: flex;
+  margin: 20px 0;
+}
+
+.resultBox .buttons button {
+  margin: 0 10px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid green;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
