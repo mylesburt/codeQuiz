@@ -25,7 +25,8 @@ body {
 }
 
 .infoBox.activeInfo,
-.quizBox.activeQuiz {
+.quizBox.activeQuiz,
+.resultBox.activeResult {
   z-index: 5;
   opacity: 1;
   pointer-events: auto;
