@@ -12,7 +12,8 @@ body {
 }
 
 .startButton,
-.infoBox {
+.infoBox,
+.quizBox {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -99,5 +100,165 @@ body {
 
 .buttons button.quit:hover {
   color: white;
+  background: darkgreen;
+}
+
+.quizBox {
+  display: none;
+  width: 550px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.quizBox header {
+  position: relative;
+  z-index: 99;
+  height: 70px;
+  padding: 0 30px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quizBox header .title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.quizBox header .timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 145px;
+  height: 45px;
+  background: lightgreen;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+.quizBox header .timer .timeText {
+  font-weight: 400;
+  font-size: 17px;
+  user-select: none;
+}
+
+.quizBox header .timer .timeSec {
+  font-size: 18px;
+  font-weight: 500;
+  background: #343a40;
+  height: 30px;
+  width: 45px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 1px solid #343a40;
+  user-select: none;
+}
+
+.quizBox section {
+  padding: 25px 30px 20px 30px;
+  background: white;
+}
+
+.quizBox section .queText {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.quizBox section .optionList {
+  padding: 20px 0;
+  display: block;
+}
+
+section .optionList .option {
+  background: rgb(211, 252, 211);
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+section .optionList .option:hover {
+  color: green;
+  background: lightgreen;
+  border-color: lightgray;
+}
+
+.optionList .option:last-child {
+  margin-bottom: 0px;
+}
+
+.optionList .option .icon {
+  height: 26px;
+  width: 26px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 24px;
+  pointer-events: none;
+}
+
+.optionList .option .icon.tick {
+  color: blue;
+  border-color: blue;
+  background: white;
+}
+
+.optionList .option .icon.cross {
+  color: red;
+  border-color: red;
+  background: white;
+}
+
+.quizBox footer {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quizBox footer .totalQue span {
+  display: flex;
+  user-select: none;
+}
+
+footer .totalQue span p {
+  font-weight: 500;
+  padding: 0 5px;
+}
+
+footer .totalQue span p:first-child {
+  padding-left: 0px;
+}
+
+footer .nextBtn {
+  height: 40px;
+  padding: 0 13px;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  color: white;
+  background: green;
+  border-radius: 5px;
+  border: 1px solid green;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+footer .nextBtn:hover {
   background: darkgreen;
 }
